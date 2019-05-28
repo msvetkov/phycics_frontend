@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+#root {
+    background: #fafafa;
+    height: 100vh;
+    width: 100%;
+}
+
+header {
+    align-items: center;
+    background: #B33771;
+    box-shadow: 0 4px 4px rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    height: 64px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+header > .title {
+    color: #fafafa;
+    text-indent: 14px;
+}
+
+header > a {
+    margin-left: auto;
+    color: #fafafa;
+    margin-right: 48px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.container {
+    height: 100%;
+    max-width: 1280px;
+    padding: 0 1.5em;
+    width: 100%;
+}
+
+.title {
+    color: #212121;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.lab-theme {
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+.lab-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lab-item {
+    align-content: center;
+    box-shadow: 0 4px 4px rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+    transition: transform .15s ease-in; 
+    width: 350px;
+}
+
+.lab-item:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.lab-item > .title {
+    color: #212121;
+    font-size: 16px;
+}
+
+.lab-item > .description {
+    color: #212121;
+    font-size: 14px;
+    flex: 1;
+}
+
+.lab-item > div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+.lab-item > .mark::before {
+    content: "Ваша оценка: ";
+    color: #212121;
+    font-size: 14px;
+}
+
+.lab-item > .protokol::before {
+    content: "Протокол : ";
+    color: #212121;
+    font-size: 14px;
+}
+
+.lab-item > .answer::before {
+    content: "Ответ преподователя : ";
+    color: #212121;
+    font-size: 14px;
+}
+
+.lab-item .send, .lab-item .link{
+    margin-top: 8px;
+    text-decoration: none;
+    align-self: center;
+    border: none;
+    background: transparent;
+    color: #B33771;
+    font-size: 14px;
+}
+
+.lab-item .send{
+    margin-left: auto;
+}
+
+.lab-item > .send:hover, .link:hover{
+    color: rgb(90, 28, 57);
+}
+
+.spoiler >  input + .box {
+    display: none;
+}
+.spoiler >  input:checked + .box {
+    display: block;
+}
+
+input[type="file"] {
+    margin-top: 8px;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    color: #B33771;
+    font-size: 14px;
+}
