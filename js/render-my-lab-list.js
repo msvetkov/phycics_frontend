@@ -3,7 +3,7 @@ function renderItem(item, type) {
         <div class="lab-item">
             <h2 class="title">${item.labwork.title}</h2>
             <p class="description">${item.labwork.description}</p>
-            <p class="protokol">${item.madeLabwork.protocol}</p>
+            <a class="protokol" href="${item.madeLabwork.protocol}">Протокол</a>
             ${renderInfo(item, type)}
         </div>
     `;
@@ -13,7 +13,8 @@ function renderInfo(item, type) {
     switch(type) {
         case 0: 
             return `
-            <button class="send" onclick="${null}">Отправить отчет</button>
+            <input id="file-upload${item.id}" type="file"/>
+            <button class="send" onclick="sendFile(${item.id}, 'answer')">Отправить отчет</button>
             `;
         case 1: 
             return `

@@ -72,6 +72,7 @@ header > a {
     padding: 16px;
     transition: transform .15s ease-in; 
     width: 350px;
+    overflow: hidden;
 }
 
 .lab-item:hover {
@@ -102,8 +103,7 @@ header > a {
     font-size: 14px;
 }
 
-.lab-item > .protokol::before {
-    content: "Протокол : ";
+.lab-item > .protokol{
     color: #212121;
     font-size: 14px;
 }

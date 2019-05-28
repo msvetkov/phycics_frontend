@@ -9,7 +9,7 @@ function ajaxPost(url, json, func) {
 
     xmlHttp.onload = func;
 
-    let jsonToSend = JSON.stringify(json, null, ' ');
+    var jsonToSend = JSON.stringify(json, null, ' ');
 
     if (json == null) {
         xmlHttp.send();

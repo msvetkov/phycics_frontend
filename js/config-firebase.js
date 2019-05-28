@@ -11,12 +11,12 @@
 
   firebase.initializeApp(firebaseConfig);
 
-  function sendProtokol(id) {
+  function sendFile(id, type) {
     var file = document.querySelector(`#file-upload${id}`).files[0];
     if (typeof file == 'undefined') {
         return;
     }
-    var storageRef = firebase.storage().ref('protocols/' + file.name);
+    var storageRef = firebase.storage().ref(type + '/' + file.name);
     var uploadTask = storageRef.put(file);
 
     uploadTask.on('state_changed', function(snapshot){
@@ -37,7 +37,29 @@
       }, function() {
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
           console.log('File available at', downloadURL);
-          alert('Протокол успешно отправлен, откройте вкладку "Мои работы" для просмотра');
-        });
+          if (type == 'protocol'){
+            alert('Протокол успешно отправлен, откройте вкладку "Мои работы" для просмотра');
+            sendProtocol({
+                id: id,
+                protocol: downloadURL
+            }, function(response) {
+                if (xmlHttp.status == 200)
+                    console.log('kaif')
+                else
+                    console.log('govna pozhral'); 
+            })
+          } else if (type == 'answer') {
+            alert('Отчет успешно отправлен');
+            sendAnswer({
+                id: id,
+                answer: downloadURL
+            }, function(response) {
+                if (xmlHttp.status == 200)
+                    console.log('kaif')
+                else
+                    console.log('govna pozhral'); 
+            })
+        }
       });
-}
+    });
+    }

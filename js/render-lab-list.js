@@ -6,7 +6,7 @@ function renderItem(item) {
             <input id="file-upload${item.id}" type="file"/>
             <div>
                 <a class="link" href="${item.link}">Открыть работу</a>
-                <button class="send" onclick="sendProtokol(${item.id})">Отправить протокол</button>
+                <button class="send" onclick="sendFile(${item.id}, 'protocol')">Отправить протокол</button>
             </div>
         </div>
     `;
